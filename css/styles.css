@@ -1,0 +1,45 @@
+body {
+  font-family: monospace;
+  color: white;
+  background-color: black;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 15px;
+}
+
+[id^=section] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top: 3%;
+  text-align: center;
+}
+
+#section-movies-list, #section-about, #section-contact {
+  padding-top: 10%;
+}
+
+[id^=watch] {
+  text-decoration: underline;
+}
+
+a:hover, .hover:hover, [id^=watch]:hover, #about-contact-btn, .selected {
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.invisible {
+  display: none;
+}
+
+.column {
+  float:left;
+  width: 33%;
+  text-align: center;
+  padding-top: 1%;
+}
