@@ -46,10 +46,10 @@ a:hover, .hover:hover, [id^=watch]:hover, #about-contact-btn, .selected {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  iframe, img {
+  iframe, img, #section-splash {
     width: 100%;
   }
-  p, a {
+  p, a, .hover {
     font-size: large;
   }
 }
