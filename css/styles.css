@@ -49,7 +49,7 @@ a:hover, .hover:hover, [id^=watch]:hover, #about-contact-btn, .selected {
   iframe {
     width: 100%;
   }
-  p {
+  p, a {
     font-size: large;
   }
 }
