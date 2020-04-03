@@ -23,7 +23,7 @@ a {
   padding-top: 10%;
 }
 
-[id^=watch] {
+[id^=watch], .link {
   text-decoration: underline;
 }
 
