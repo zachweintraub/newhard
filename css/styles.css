@@ -4,6 +4,10 @@ body {
   background-color: black;
 }
 
+body, body * {
+  max-height: 1000000px;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -44,12 +48,20 @@ a:hover, .hover:hover, [id^=watch]:hover, #about-contact-btn, .selected {
   padding-top: 1%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-device-width: 768px) {
   /* For mobile phones: */
-  iframe, img, #section-splash {
+  iframe, img, [id^=section-] {
     width: 100%;
   }
-  p, a, .hover {
-    font-size: large;
+  [id^=section-], [id$=-btn] {
+    font-size: 45px;
+  }
+
+  #section-movies-list, #section-contact {
+    padding-top: 40%;
+  }
+
+  #embedded-movies-list {
+    font-size: 20px;
   }
 }
