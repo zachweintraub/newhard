@@ -1,60 +1,102 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
 
-  $('#watch-film').click(function() {
-    $('#trailer-iframe').addClass('invisible');
-    $('#trailer-text').addClass('invisible');
-    $('#film-iframe').removeClass('invisible');
-    $('#film-text').removeClass('invisible');
-  });
+  var watchFilm = document.getElementById('watch-film');
+  if (watchFilm) {
+    watchFilm.addEventListener('click', function() {
+      document.getElementById('trailer-iframe').classList.add('invisible');
+      document.getElementById('trailer-text').classList.add('invisible');
+      document.getElementById('film-iframe').classList.remove('invisible');
+      document.getElementById('film-text').classList.remove('invisible');
+    });
+  }
 
-  $('#watch-trailer').click(function() {
-    $('#film-iframe').addClass('invisible');
-    $('#film-text').addClass('invisible');
-    $('#trailer-iframe').removeClass('invisible');
-    $('#trailer-text').removeClass('invisible');
-  });
+  var watchTrailer = document.getElementById('watch-trailer');
+  if (watchTrailer) {
+    watchTrailer.addEventListener('click', function() {
+      document.getElementById('film-iframe').classList.add('invisible');
+      document.getElementById('film-text').classList.add('invisible');
+      document.getElementById('trailer-iframe').classList.remove('invisible');
+      document.getElementById('trailer-text').classList.remove('invisible');
+    });
+  }
 
-  $('#movies-btn').click(function() {
-    $('#contact-btn').removeClass('selected');
-    $('#about-btn').removeClass('selected');
-    $('#movies-btn').addClass('selected');
-    $('[id^=section]').addClass('invisible');
-    $('#section-movies-list').removeClass('invisible');
-  });
+  var moviesBtn = document.getElementById('movies-btn');
+  if (moviesBtn) {
+    moviesBtn.addEventListener('click', function() {
+      document.getElementById('contact-btn').classList.remove('selected');
+      document.getElementById('about-btn').classList.remove('selected');
+      document.getElementById('movies-btn').classList.add('selected');
+      var sections = document.querySelectorAll('[id^=section]');
+      sections.forEach(function(section) {
+        section.classList.add('invisible');
+      });
+      document.getElementById('section-movies-list').classList.remove('invisible');
+    });
+  }
 
-  $('#about-btn').click(function() {
-    $('#movies-btn').removeClass('selected');
-    $('#contact-btn').removeClass('selected');
-    $('#about-btn').addClass('selected');
-    $('[id^=section]').addClass('invisible');
-    $('#section-about').removeClass('invisible');
-  });
+  var aboutBtn = document.getElementById('about-btn');
+  if (aboutBtn) {
+    aboutBtn.addEventListener('click', function() {
+      document.getElementById('movies-btn').classList.remove('selected');
+      document.getElementById('contact-btn').classList.remove('selected');
+      document.getElementById('about-btn').classList.add('selected');
+      var sections = document.querySelectorAll('[id^=section]');
+      sections.forEach(function(section) {
+        section.classList.add('invisible');
+      });
+      document.getElementById('section-about').classList.remove('invisible');
+    });
+  }
 
-  $('#section-splash').click(function() {
-    $('#about-btn').addClass('selected');
-    $('[id^=section]').addClass('invisible');
-    $('#section-about').removeClass('invisible');
-  });
+  var sectionSplash = document.getElementById('section-splash');
+  if (sectionSplash) {
+    sectionSplash.addEventListener('click', function() {
+      document.getElementById('about-btn').classList.add('selected');
+      var sections = document.querySelectorAll('[id^=section]');
+      sections.forEach(function(section) {
+        section.classList.add('invisible');
+      });
+      document.getElementById('section-about').classList.remove('invisible');
+    });
+  }
 
-  $('#contact-btn').click(function() {
-    $('#about-btn').removeClass('selected');
-    $('#movies-btn').removeClass('selected');
-    $('#contact-btn').addClass('selected');
-    $('[id^=section]').addClass('invisible');
-    $('#section-contact').removeClass('invisible');
-  });
+  var contactBtn = document.getElementById('contact-btn');
+  if (contactBtn) {
+    contactBtn.addEventListener('click', function() {
+      document.getElementById('about-btn').classList.remove('selected');
+      document.getElementById('movies-btn').classList.remove('selected');
+      document.getElementById('contact-btn').classList.add('selected');
+      var sections = document.querySelectorAll('[id^=section]');
+      sections.forEach(function(section) {
+        section.classList.add('invisible');
+      });
+      document.getElementById('section-contact').classList.remove('invisible');
+    });
+  }
 
-  $('#about-contact-btn').click(function() {
-    $('[id^=section]').addClass('invisible');
-    $('#about-btn').removeClass('selected');
-    $('#movies-btn').removeClass('selected');
-    $('#contact-btn').addClass('selected');
-    $('#section-contact').removeClass('invisible');
-  });
+  var aboutContactBtn = document.getElementById('about-contact-btn');
+  if (aboutContactBtn) {
+    aboutContactBtn.addEventListener('click', function() {
+      var sections = document.querySelectorAll('[id^=section]');
+      sections.forEach(function(section) {
+        section.classList.add('invisible');
+      });
+      document.getElementById('about-btn').classList.remove('selected');
+      document.getElementById('movies-btn').classList.remove('selected');
+      document.getElementById('contact-btn').classList.add('selected');
+      document.getElementById('section-contact').classList.remove('invisible');
+    });
+  }
 
-  $('.expand-collapse').click(function() {
-    $('.indicator').toggleClass('invisible');
-    $('#embedded-movies-list').toggleClass('invisible');
+  var expandCollapse = document.querySelectorAll('.expand-collapse');
+  expandCollapse.forEach(function(element) {
+    element.addEventListener('click', function() {
+      var indicators = document.querySelectorAll('.indicator');
+      indicators.forEach(function(indicator) {
+        indicator.classList.toggle('invisible');
+      });
+      document.getElementById('embedded-movies-list').classList.toggle('invisible');
+    });
   });
 
 });
